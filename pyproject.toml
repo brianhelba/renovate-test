@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
-build-backend = "hatchling.build"
+requires = ["uv_build"]
+build-backend = "uv_build"
 
 [project]
 name = "renovate-test"
@@ -8,7 +8,7 @@ version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
   "click==8.0.*",
-  "django==4.0",
+  "django>=5.1.0",
 ]
 
 [project.optional-dependencies]
