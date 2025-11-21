@@ -7,16 +7,16 @@ name = "renovate-test"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-  "click==8.0.*",
-  "django>=4.1.0",
+  "click>=8",
+  "django>=4.0",
 ]
 
 [project.optional-dependencies]
 test = [
-  "pytest==9.0.*",
+  "pytest==8.0.0",
 ]
 
 [dependency-groups]
 dev = [
-  "tox",
+  "tox==4.0.0",
 ]
