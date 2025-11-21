@@ -5,6 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "renovate-test"
 version = "0.1.0"
+requires-python = ">=3.12"
 dependencies = [
   "click",
   "django==4.0",
