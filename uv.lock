@@ -167,7 +167,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "click", specifier = ">=8" },
-    { name = "django", specifier = ">=4.0" },
+    { name = "django", specifier = "~=4.0" },
     { name = "pytest", marker = "extra == 'test'", specifier = "==8.0.0" },
 ]
 provides-extras = ["test"]
