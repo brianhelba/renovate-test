@@ -178,7 +178,7 @@ dev = [
 requires-dist = [
     { name = "click", specifier = "==8.0.*" },
     { name = "django", specifier = "==4.0" },
-    { name = "pytest", marker = "extra == 'test'", specifier = "==9.0" },
+    { name = "pytest", marker = "extra == 'test'", specifier = "==9.0.*" },
 ]
 provides-extras = ["test"]
 
