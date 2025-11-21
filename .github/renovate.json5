@@ -4,6 +4,9 @@
     "config:recommended",
     "group:allNonMajor"
   ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
   "packageRules": [
     {
       // make a separate group for the .python-version file
@@ -11,7 +14,7 @@
         "pyenv"
       ],
       "groupSlug": "python-version",
-      "groupName": "Python .python-version file",
+      "groupName": ".python-version file",
       "commitMessageTopic": ".python-version file",
       // "docker" versioning preserves the precision of the version specifier
       "versioning": "docker"
