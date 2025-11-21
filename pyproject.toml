@@ -7,8 +7,8 @@ name = "renovate-test"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-  "click>=8",
-  "django~=4.0",
+  "click>=7",
+  "django>=4.2",
 ]
 
 [project.optional-dependencies]
