@@ -3,5 +3,12 @@
   "extends": [
     "config:recommended",
     "group:allNonMajor"
+  ],
+  "packageRules": [
+    // make a separate group for the .python-version file
+    "matchManagers": ["pyenv"],
+    "groupSlug": "python-version",
+    "groupName": "Python .python-version file",
+    "versioning": "pep440",
   ]
 }
