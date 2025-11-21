@@ -6,12 +6,13 @@ build-backend = "hatchling.build"
 name = "renovate-test"
 version = "0.1.0"
 dependencies = [
+  "click",
   "django==4.0",
 ]
 
 [project.optional-dependencies]
-cli = [
-  "click",
+test = [
+  "pytest",
 ]
 
 [dependency-groups]
