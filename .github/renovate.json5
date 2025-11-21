@@ -12,7 +12,9 @@
       ],
       "groupSlug": "python-version",
       "groupName": "Python .python-version file",
-      "versioning": "pep440"
+      "commitMessageTopic": ".python-version file",
+      // "docker" versioning preserves the precision of the version specifier
+      "versioning": "docker"
     }
   ]
 }
