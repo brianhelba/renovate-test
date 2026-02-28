@@ -3,15 +3,13 @@
   "extends": [
     "config:recommended"
   ],
-  // EXPERIMENT 1: rangeStrategy "update-lockfile"
+  // EXPERIMENT 2: rangeStrategy "bump"
   // Questions:
-  //   - Does "httpx" (bare dep) get skipped?
-  //   - Do >= ranges get lock-only PRs (no pyproject.toml changes)?
-  //   - Does bounded range "django>=4.2,<5" get lock-only PRs for 4.x updates?
-  //   - Does "build-system.requires" get tracked?
-  //   - Does "requires-python" get update proposals?
-  //   - Does lockFileMaintenance overlap with update-lockfile PRs?
-  "rangeStrategy": "update-lockfile",
+  //   - Does "click>=7" become "click>=8.1.8" (or whatever latest is)?
+  //   - Does "django>=4.2,<5" bump to "django>=4.2.20,<5" (or similar)?
+  //   - How are == pinned deps handled (same as other strategies)?
+  //   - Test matchDepTypes targeting
+  "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["at any time"]
@@ -21,6 +19,16 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
+    },
+    {
+      // Test matchDepTypes: does this correctly match dependency-groups?
+      "matchDepTypes": ["dependency-groups"],
+      "addLabels": ["dep-group-match"]
+    },
+    {
+      // Test matchDepTypes: does this correctly match optional-dependencies?
+      "matchDepTypes": ["project.optional-dependencies"],
+      "addLabels": ["optional-dep-match"]
     },
     {
       "matchManagers": ["pyenv"],
