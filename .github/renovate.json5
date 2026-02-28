@@ -3,14 +3,12 @@
   "extends": [
     "config:recommended"
   ],
-  // EXPERIMENT 4: rangeStrategy "replace" + separateMultipleMajor
-  // Questions:
-  //   - Does "django>=4.2,<5" become "django>=5.0,<6" for Django 5.x?
-  //   - Does "click>=7" stay unchanged (already in range) or replace?
-  //   - Does separateMultipleMajor create individual PRs for each major?
-  //   - How are == pins handled with replace?
-  "rangeStrategy": "replace",
-  "separateMultipleMajor": true,
+  // EXPERIMENT 5: rangeStrategy "bump" with requires-python excluded
+  // Hypotheses:
+  //   - Excluding python from bump should prevent requires-python from being bumped
+  //   - With requires-python stable, uv lock should succeed and uv.lock WILL be updated
+  //   - This confirms that experiment 2's missing uv.lock was caused by the requires-python bump
+  "rangeStrategy": "bump",
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["at any time"]
@@ -20,6 +18,12 @@
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
+    },
+    {
+      // Guard rule: prevent bumping requires-python
+      "matchDepNames": ["python"],
+      "matchManagers": ["pep621"],
+      "enabled": false
     },
     {
       "matchManagers": ["pyenv"],
