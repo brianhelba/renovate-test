@@ -3,12 +3,14 @@
   "extends": [
     "config:recommended"
   ],
-  // EXPERIMENT 3: rangeStrategy "widen"
+  // EXPERIMENT 4: rangeStrategy "replace" + separateMultipleMajor
   // Questions:
-  //   - Does "django>=4.2,<5" widen to "django>=4.2,<6" for Django 5.x?
-  //   - Does "click>=7" stay unchanged (already allows latest)?
-  //   - How do == pins behave with widen?
-  "rangeStrategy": "widen",
+  //   - Does "django>=4.2,<5" become "django>=5.0,<6" for Django 5.x?
+  //   - Does "click>=7" stay unchanged (already in range) or replace?
+  //   - Does separateMultipleMajor create individual PRs for each major?
+  //   - How are == pins handled with replace?
+  "rangeStrategy": "replace",
+  "separateMultipleMajor": true,
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["at any time"]
