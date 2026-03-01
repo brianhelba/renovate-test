@@ -1,5 +1,5 @@
 [build-system]
-requires = ["uv_build>=0.6,<1"]
+requires = ["uv_build>=0.10.7,<1"]
 build-backend = "uv_build"
 
 [project]
@@ -7,17 +7,17 @@ name = "renovate-test"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-  "click>=7",
-  "django>=4.2,<5",
+  "click>=7.1.2",
+  "django>=4.2.28,<5",
   "httpx",
 ]
 
 [project.optional-dependencies]
 test = [
-  "pytest==8.0.0",
+  "pytest==8.4.2",
 ]
 
 [dependency-groups]
 dev = [
-  "tox==4.0.0",
+  "tox==4.46.3",
 ]
